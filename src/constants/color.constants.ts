@@ -1,7 +1,6 @@
 export const COLORS = {
-  primary: '#000000',
-  secondary: '#FFFFFF',
-  border: '#000000',
-  sidebar: '#000000',
-  bg: '#000000',
+  primary: '#1e1e3c',
+  text: '#e6e6ff',
+  btn: '#bebee6',
+  border: '#50506e',
 };

@@ -1,0 +1,11 @@
+.wrapper {
+  @apply min-h-screen flex items-center justify-center;
+
+  .main {
+    @apply bg-cyan-800 p-8 rounded-lg shadow-md;
+
+    .heading {
+      @apply font-semibold mb-14;
+    }
+  }
+}

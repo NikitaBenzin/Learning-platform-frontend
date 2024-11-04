@@ -1,0 +1,34 @@
+.input-field {
+  @apply w-full p-2 border border-teal-800 rounded;
+}
+
+.btn-primary {
+  @apply w-full py-2 text-white font-semibold rounded transition duration-300 ease-in-out mt-1;
+
+  &:hover {
+    @apply transform scale-105;
+  }
+}
+
+.recaptcha {
+  @apply mb-3;
+
+  > div > div {
+    @apply mx-auto;
+  }
+
+  iframe {
+    html {
+      body {
+        .rc-anchor-light.rc-anchor-normal {
+          border: 1px solid #ff0000 !important;
+        }
+
+        .rc-anchor-light {
+          background: #ffffff00;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
