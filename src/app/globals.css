@@ -4,7 +4,7 @@
 
 :root {
   --primary: #1e1e3c;
-  --text: #e6e6ff;
+  --text: #ffffff;
   --btn: #bebee6;
   --border: #50506e;
 }
@@ -38,10 +38,6 @@ body {
   }
 }
 
-button {
-  color: var(--border);
-  background-color: var(--btn);
-}
 
 @layer utilities {
   .text-balance {
