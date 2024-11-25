@@ -176,9 +176,9 @@ const config: Config = {
     },
     colors: {
       white: '#ffffff',
-      lightPrimary: '#F4F7FE',
-      blueSecondary: '#4318FF',
-      brandLinear: '#868CFF',
+      primary: '#030615',
+      btn: '#bebee6',
+      border: '#50506e',
       transparent: 'transparent',
       gray: {
         50: '#F5F6FA',

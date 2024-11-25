@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { AuthForm } from "./auth-form/AuthForm";
-import style from "./Login.module.scss";
+import type { Metadata } from 'next';
+import style from '../Auth.module.scss';
+import { AuthForm } from './auth-form/AuthForm';
 
 export const metadata: Metadata = {
-  title: "Login",
+  title: 'Login',
 };
 
 export default function LoginPage() {

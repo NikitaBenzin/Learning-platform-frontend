@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --primary: #1e1e3c;
+  --primary: #030615;
   --text: #ffffff;
   --btn: #bebee6;
   --border: #50506e;
@@ -25,8 +26,12 @@
 } */
 
 body {
-  font-size: 18px;
-  background: var(--primary);
+  @apply w-full min-h-[100vh] bg-no-repeat;
+  background-image: url('./assets/images/auth-page-bg-desktop.png');
+  background-size: 100% !important;
+  background-position: top center;
+  font-size: 1.18rem;
+  background-color: var(--primary);
   color: var(--text);
 
   @media (max-width: 1200px) {
@@ -34,13 +39,113 @@ body {
   }
 
   @media (max-width: 992px) {
-    font-size: 14px;
+    font-size: 17px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 15px;
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+header {
+  @apply max-w-screen-2xl;
+  margin: 0 auto;
+}
+
+main {
+  @apply flex flex-col justify-center max-w-screen-2xl;
+  margin: 3rem auto;
+}
+
+footer {
+  @apply max-w-screen-2xl;
+  margin: 0 auto;
+}
+
+.container {
+  @apply min-w-full min-h-[100vh] p-4 pb-0;
+}
+
+
+a {
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+  &::after {
+    content: '';
+    @apply block h-[1px] cursor-pointer w-0 bg-white border-opacity-50;
+    transition: width 0.5s;
+  }
+}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+.not-found {
+  @apply flex items-center justify-center h-[60vh] text-center w-[90%];
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: #030717;
+  }
+  h1 {
+    @apply text-xl;
+  }
+  h2 {
+    @apply text-base;
+  }
+  h3 {
+    @apply text-sm;
+  }
+  p {
+    @apply text-xs;
+  }
+}
+

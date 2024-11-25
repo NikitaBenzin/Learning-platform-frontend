@@ -1,0 +1,74 @@
+@import '@/assets/styles/mixins.scss';
+
+.siteOverview {
+  @apply mb-4 h-[450px] py-4 px-6 flex items-center justify-between gap-6;
+  h1 {
+    @apply mr-4;
+  }
+  .siteStatistics {
+    @apply flex flex-col justify-center items-center p-4;
+    @include blur-bg;
+    background-color: rgba(0, 0, 0, 0.2);
+    .statistic {
+      @apply flex text-center gap-6;
+    }
+    > p {
+      @apply py-4 max-w-screen-sm font-medium;
+    }
+  }
+}
+
+.intensivesGallery {
+  @apply grid justify-items-center gap-8 justify-center;
+  grid-template-columns: repeat(3, 217px);
+
+  .intensive {
+    @apply w-[217px] h-[335px] place-items-center cursor-pointer object-cover relative;
+    scroll-snap-align: center;
+    @include blur-bg;
+    @include btn-hover-animation;
+    img {
+      @apply block w-36 h-36 py-6;
+      object-fit: contain;
+    }
+    .intensiveInfo {
+      @apply absolute bottom-0 left-0 p-4 text-center;
+      h2 {
+        @apply uppercase pb-4;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .intensivesGallery {
+    row-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .siteOverview {
+    @apply flex-col justify-start h-fit text-center;
+    h1 {
+      @apply mr-0;
+    }
+  }
+  .intensivesGallery {
+    grid-template-columns: repeat(2, 180px);
+    .intensive {
+      width: 180px;
+      height: 250px;
+      img {
+        @apply block w-24 h-24 py-4;
+      }
+    }
+  }
+}
+@media screen and (max-width: 494px) {
+  /* .siteOverview {
+        @apply h-[333px] grid-cols-1;
+      } */
+  .intensivesGallery {
+    grid-template-columns: 220px;
+  }
+}

@@ -1,7 +1,11 @@
+@import '@/assets/styles/mixins.scss';
 .authForm {
   @apply max-w-sm mx-auto;
 
   .inputLabel {
+    .labelText {
+      @apply text-transparent;
+    }
     .input-field {
       @apply w-full p-2 bg-transparent border-none;
       border-radius: 0 !important;
@@ -19,34 +23,14 @@
 }
 
 .btn-primary {
-  @apply w-full pt-2 pb-[0.4rem] font-semibold rounded transition duration-300 ease-in-out bg-white;
+  @apply w-full mt-2 pt-2 pb-[0.4rem] font-semibold rounded bg-white;
   color: rgba(0, 94, 255, 0.5);
-
-  &:hover {
-    @apply transform scale-105;
-  }
+  @include btn-hover-animation;
 }
 
 .recaptcha {
-  @apply mb-3;
-
   > div > div {
     @apply mx-auto;
-  }
-
-  iframe {
-    html {
-      body {
-        .rc-anchor-light.rc-anchor-normal {
-          border: 1px solid #ff0000 !important;
-        }
-
-        .rc-anchor-light {
-          background: #ffffff00;
-          color: #ffffff;
-        }
-      }
-    }
   }
 }
 
