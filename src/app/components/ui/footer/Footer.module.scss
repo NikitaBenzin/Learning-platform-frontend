@@ -1,6 +1,6 @@
 .footer {
-  @apply rounded-t-lg rounded-tr-lg py-8 px-12 pb-0;
-  background-color: rgba(255, 255, 255, 0.1);
+  @apply py-8 px-12 pb-0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   .linksLayout {
     @apply flex justify-between mb-6;
     .footerLinks {

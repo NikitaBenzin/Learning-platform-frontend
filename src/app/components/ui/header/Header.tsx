@@ -11,7 +11,9 @@ import styles from './Header.module.scss';
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const asPath = usePathname();
-  return (
+  return asPath.startsWith('/student') ? (
+    ''
+  ) : (
     <header className={styles.header}>
       <Link href='/'>Dev.Learn</Link>
 

@@ -1,21 +1,12 @@
 @import '@/assets/styles/mixins.scss';
 .wrapper {
-  @apply min-h-screen flex items-center justify-center;
-  background-image: url(../assets/images/auth-page-bg.png);
-  background-position: center center;
-  background-size: cover;
+  @apply h-[80vh] flex items-center justify-center;
 
   .main {
     @apply p-8 rounded-lg mx-4;
-    @include blur-bg;
+    background-color: rgba(255, 255, 255, 0.1);
     .heading {
       @apply font-semibold mb-4 text-base;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper {
-    background-image: url(../assets/images/auth-page-bg-mobile.png);
   }
 }

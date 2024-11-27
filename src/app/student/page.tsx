@@ -1,3 +1,5 @@
+import { StudentNav } from '../components/ui/studentNav/StudentNav';
+
 const Student = () => {
   return (
     // <div className='container'>
@@ -8,9 +10,8 @@ const Student = () => {
     //   </main>
     //   <Footer />
     // </div>
-    <div className='container'>
-      <header></header>
-    </div>
+
+    <StudentNav />
   );
 };
 

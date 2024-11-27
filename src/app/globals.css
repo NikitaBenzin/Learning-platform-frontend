@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --primary: #030615;
+  --primary: #000201;
   --text: #ffffff;
   --btn: #bebee6;
   --border: #50506e;
@@ -26,13 +25,14 @@
 } */
 
 body {
-  @apply w-full min-h-[100vh] bg-no-repeat;
-  background-image: url('./assets/images/auth-page-bg-desktop.png');
-  background-size: 100% !important;
-  background-position: top center;
+  @apply w-full min-h-screen bg-no-repeat;
   font-size: 1.18rem;
   background-color: var(--primary);
   color: var(--text);
+  /* background: linear-gradient(to bottom, #0feeec 0%, #3aeeb5 100%); */
+  background-image: url('./assets/images/main_background1.png');
+
+  background-position: top right;
 
   @media (max-width: 1200px) {
     font-size: 16px;
@@ -86,9 +86,9 @@ footer {
 }
 
 .container {
-  @apply min-w-full min-h-[100vh] p-4 pb-0;
+  @apply min-h-screen p-4 pb-0 max-w-screen-2xl;
+  margin: 0 auto;
 }
-
 
 a {
   &:hover {
@@ -110,7 +110,7 @@ a {
 }
 
 .not-found {
-  @apply flex items-center justify-center h-[60vh] text-center w-[90%];
+  @apply flex items-center justify-center h-[75vh] text-center w-[90%];
 }
 
 /* width */
@@ -132,9 +132,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  body {
-    background-color: #030717;
-  }
   h1 {
     @apply text-xl;
   }
@@ -148,4 +145,3 @@ a {
     @apply text-xs;
   }
 }
-

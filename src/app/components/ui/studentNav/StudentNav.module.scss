@@ -1,0 +1,61 @@
+@import '@/assets/styles/mixins.scss';
+.nav {
+  @apply fixed left-4 grid justify-items-center rounded-2xl py-4;
+  grid-template-rows: 6fr;
+  top: calc(50% - 452px / 2);
+  background-color: rgba(255, 255, 255, 0.1);
+  .sidebarToggle {
+    @apply flex justify-self-end opacity-40 transition-opacity duration-300 ease-in-out bg-transparent outline-none border-none p-6 cursor-pointer text-right w-min;
+
+    &:hover {
+      @apply opacity-100;
+    }
+  }
+
+  > a {
+    @apply flex justify-center items-center gap-2 relative no-underline p-6;
+    &::after {
+      @apply hidden;
+    }
+    &:nth-child(2) {
+      &::after {
+        content: '';
+        @apply block absolute bottom-0 left-1/4 w-1/2 opacity-10;
+      }
+    }
+  }
+  .dots {
+    @apply flex justify-center space-x-2;
+  }
+  .active {
+    &::before {
+      content: '';
+      @apply block absolute top-1/4 left-0 w-[1px] h-1/2 bg-white;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    @apply flex h-[60px] justify-evenly py-0 px-2;
+    top: calc(100% - 70px);
+    left: calc(50% - 120px);
+
+    .dots {
+      @apply hidden;
+    }
+    > a {
+      @apply p-4;
+      &:nth-child(2) {
+        &::after {
+          @apply top-1/4 left-full w-[1px] h-1/2;
+        }
+      }
+    }
+    .active {
+      &::before {
+        @apply top-[99%] left-1/4 h-[1px] w-1/2;
+      }
+    }
+  }
+}

@@ -55,7 +55,7 @@ export function useAuthForm(isLogin: boolean) {
     const token = recaptchaRef?.current?.getValue();
 
     if (!token) {
-      toast.error('Пройдите капчу!');
+      toast.error('Pass the captcha!');
       return;
     }
 

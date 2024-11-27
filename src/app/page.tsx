@@ -2,13 +2,11 @@ import intensiveBgImage from '@/assets/images/next-js.svg';
 import Image from 'next/image';
 import Button from './components/ui/button/Button';
 import Footer from './components/ui/footer/Footer';
-import { Header } from './components/ui/header/Header';
 import styles from './Home.module.scss';
 
 export default function Home() {
   return (
-    <div className='container'>
-      <Header />
+    <>
       <main>
         <section className={styles.siteOverview}>
           <h1>Welcome to our Learning Platform</h1>
@@ -67,6 +65,6 @@ export default function Home() {
         </ul>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

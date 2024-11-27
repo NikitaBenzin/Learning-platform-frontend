@@ -1,5 +1,4 @@
-import { ADMIN_PAGES } from '@/config/pages/admin.config';
-import { PUBLIC_PAGES } from '@/config/pages/public.config';
+import { UserRole } from '@/services/auth/auth.types';
 import { getServerAuth } from '@/utils/server/get-server-auth';
 import { redirect } from 'next/navigation';
 import { PropsWithChildren } from 'react';
@@ -10,6 +9,8 @@ export default async function AuthLayout({
   const user = await getServerAuth();
 
   if (user?.isLoggedIn)
-    return redirect(user.isAdmin ? ADMIN_PAGES.HOME : PUBLIC_PAGES.HOME);
+    return redirect(
+      user.rights.includes(UserRole.ADMIN) ? '/asdasd' : '/asdasd'
+    );
   return children;
 }

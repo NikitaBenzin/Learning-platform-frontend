@@ -176,7 +176,7 @@ const config: Config = {
     },
     colors: {
       white: '#ffffff',
-      primary: '#030615',
+      primary: '#000201',
       btn: '#bebee6',
       border: '#50506e',
       transparent: 'transparent',
