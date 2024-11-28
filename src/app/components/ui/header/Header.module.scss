@@ -1,6 +1,6 @@
 @import '@/assets/styles/mixins.scss';
 .header {
-  @apply flex justify-between items-center px-8 py-2 rounded-full relative z-10;
+  @apply flex justify-between items-center px-8 rounded-full relative z-10;
   vertical-align: baseline;
   .hamburgerButton {
     @apply hidden text-[1.45rem];
@@ -23,7 +23,7 @@
       }
     }
     .studentPage {
-      @apply border border-white border-opacity-10 rounded-full px-4 py-1 flex items-center;
+      @apply px-4 py-1 flex items-center;
       @include btn-hover-animation;
       > svg {
         @apply text-xl;
@@ -39,7 +39,7 @@
 .open {
   display: flex !important;
   gap: 2rem !important;
-  @apply absolute items-center top-12 left-0 w-full flex-col rounded-lg p-4 bg-[#000201];
+  @apply absolute items-center top-12 left-0 w-full flex-col rounded-lg p-4 bg-[#000000];
   animation: slideDown 0.5s linear;
   a {
     @apply rounded-2xl py-2 px-4;
@@ -86,6 +86,7 @@
 }
 @media (max-width: 494px) {
   .header {
+    @apply px-0;
     .headerNavigation {
       display: none;
     }

@@ -11,6 +11,7 @@ export const StudentNavItem = ({
   return (
     <Link className={path === item.link ? styles.active : ''} href={item.link}>
       <item.icon />
+      <span className={styles.linkName}>{item.title}</span>
     </Link>
   );
 };

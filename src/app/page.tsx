@@ -1,5 +1,6 @@
-import intensiveBgImage from '@/assets/images/next-js.svg';
+import intensiveBgImage from '@/assets/images/main-bg.png';
 import Image from 'next/image';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import Button from './components/ui/button/Button';
 import Footer from './components/ui/footer/Footer';
 import styles from './Home.module.scss';
@@ -9,7 +10,7 @@ export default function Home() {
     <>
       <main>
         <section className={styles.siteOverview}>
-          <h1>Welcome to our Learning Platform</h1>
+          <h1>Become a developer with us</h1>
           <section className={styles.siteStatistics}>
             <ul className={styles.statistic}>
               <li>
@@ -31,38 +32,53 @@ export default function Home() {
               and hands-on courses to help you build your skills and become a
               full-stack developer.
             </p>
-            <div className='flex gap-3'>
-              <Button className='bg-white text-primary font-semibold'>
-                Learn more
+            <div className={styles.statisticButtons}>
+              <Button className='text-[#000000]' isFilled={true}>
+                Start learning now <MdOutlineKeyboardArrowRight />
               </Button>
               <Button>Join our Discord</Button>
             </div>
           </section>
         </section>
 
-        <ul className={styles.intensivesGallery}>
-          <li className={styles.intensive}>
-            <Image src={intensiveBgImage} alt='Front-end for beginners' />
-            <div className={styles.intensiveInfo}>
-              <h2>Front-end for beginners</h2>
-              <p>From 0 to full professionals</p>
-            </div>
-          </li>
-          <li className={styles.intensive}>
-            <Image src={intensiveBgImage} alt='Front-end for beginners' />
-            <div className={styles.intensiveInfo}>
-              <h2>Front-end for beginners</h2>
-              <p>From 0 to full professionals</p>
-            </div>
-          </li>
-          <li className={styles.intensive}>
-            <Image src={intensiveBgImage} alt='Front-end for beginners' />
-            <div className={styles.intensiveInfo}>
-              <h2>Front-end for beginners</h2>
-              <p>From 0 to full professionals</p>
-            </div>
-          </li>
-        </ul>
+        <section className={styles.intensives}>
+          <h2>Our Intensives</h2>
+          <ul className={styles.intensivesGallery}>
+            <li className={styles.intensive}>
+              <div className={styles.intensiveInfo}>
+                <h3>Front-end for beginners</h3>
+                <div className={styles.intensiveDetails}>
+                  <span>30 lessons</span>
+                  <span>50 hours</span>
+                  <span>8 exercise</span>
+                </div>
+              </div>
+              <Image src={intensiveBgImage} alt='Front-end for beginners' />
+            </li>
+            <li className={styles.intensive}>
+              <div className={styles.intensiveInfo}>
+                <h3>Front-end for beginners</h3>
+                <div className={styles.intensiveDetails}>
+                  <span>30 lessons</span>
+                  <span>50 hours</span>
+                  <span>8 exercise</span>
+                </div>
+              </div>
+              <Image src={intensiveBgImage} alt='Front-end for beginners' />
+            </li>
+            <li className={styles.intensive}>
+              <div className={styles.intensiveInfo}>
+                <h3>Front-end for beginners</h3>
+                <div className={styles.intensiveDetails}>
+                  <span>30 lessons</span>
+                  <span>50 hours</span>
+                  <span>8 exercise</span>
+                </div>
+              </div>
+              <Image src={intensiveBgImage} alt='Front-end for beginners' />
+            </li>
+          </ul>
+        </section>
       </main>
       <Footer />
     </>

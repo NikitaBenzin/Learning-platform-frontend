@@ -4,9 +4,17 @@ import { FC } from 'react';
 import styles from './Button.module.scss';
 import { IButton } from './button.types';
 
-const Button: FC<IButton> = ({ children, className, ...rest }) => {
+const Button: FC<{ isFilled?: boolean } & IButton> = ({
+  isFilled = false,
+  children,
+  className,
+  ...rest
+}) => {
   return (
-    <button className={cn(styles.button, className)} {...rest}>
+    <button
+      className={cn(isFilled ? styles.filled : null, styles.button, className)}
+      {...rest}
+    >
       {children}
     </button>
   );

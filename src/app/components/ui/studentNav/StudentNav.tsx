@@ -8,9 +8,9 @@ export const StudentNav = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.dots}>
-        <span className='w-2 h-2 bg-gray-500 rounded-full opacity-5'></span>
-        <span className='w-2 h-2 bg-gray-500 rounded-full opacity-5'></span>
-        <span className='w-2 h-2 bg-gray-500 rounded-full opacity-5'></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
       {MENU.map(item => (
         <StudentNavItem item={item} path={asPath} key={item.link} />

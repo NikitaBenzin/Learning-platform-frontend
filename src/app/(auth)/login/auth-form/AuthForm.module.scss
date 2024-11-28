@@ -1,25 +1,6 @@
 @import '@/assets/styles/mixins.scss';
 .authForm {
   @apply max-w-sm mx-auto;
-
-  .inputLabel {
-    .labelText {
-      @apply text-transparent;
-    }
-    .input-field {
-      @apply w-full p-2 bg-transparent border-none;
-      border-radius: 0 !important;
-      border-bottom: 2px solid #ffffff;
-      &::placeholder {
-        color: #ffffff;
-      }
-      &:focus {
-        &::placeholder {
-          color: transparent;
-        }
-      }
-    }
-  }
 }
 
 .btn-primary {

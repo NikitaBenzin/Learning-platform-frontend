@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/app/components/ui/button/Button';
+import Field from '@/app/components/ui/input/Field';
 import { useWindowSize } from '@/app/hooks/useWindowSize';
 import clsx from 'clsx';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -18,33 +20,18 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.authForm}>
-      <div className='mb-4 relative'>
-        <label className={styles.inputLabel}>
-          <input
-            type='email'
-            placeholder='Enter email: '
-            {...register('email', { required: true })}
-            className={clsx(
-              styles['input-field'],
-              'w-full p-2 border rounded focus:outline-none focus:border-indigo-800'
-            )}
-          />
-        </label>
-      </div>
-
-      <div className='mb-4'>
-        <label className={styles.inputLabel}>
-          <input
-            type='password'
-            placeholder='Enter password: '
-            {...register('password', { required: true })}
-            className={clsx(
-              styles['input-field'],
-              'w-full p-2 border rounded focus:outline-none focus:border-indigo-500'
-            )}
-          />
-        </label>
-      </div>
+      <Field
+        type='email'
+        placeholder='Enter email: '
+        {...register('email', { required: true })}
+        className={styles.inputField}
+      />
+      <Field
+        type='password'
+        placeholder='Enter password: '
+        {...register('password', { required: true })}
+        className={styles.inputField}
+      />
 
       <ReCAPTCHA
         ref={recaptchaRef}
@@ -55,17 +42,17 @@ export function AuthForm({ isLogin }: AuthFormProps) {
       />
 
       <div className='mb-3'>
-        <button
+        <Button
+          isFilled={true}
           type='submit'
           className={clsx(
-            styles['btn-primary'],
-            isLogin ? 'bg-indigo-500' : 'bg-green-500',
-            isLoading ? 'opacity-75 cursor-not-allowed' : ''
+            isLoading ? 'opacity-75 cursor-not-allowed' : '',
+            'w-full justify-center mt-4'
           )}
           disabled={isLoading}
         >
           {isLoading ? 'Loading...' : isLogin ? 'Login' : 'Signup'}
-        </button>
+        </Button>
       </div>
 
       {/* <SocialMediaButtons /> */}

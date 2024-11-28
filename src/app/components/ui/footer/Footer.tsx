@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { FaTelegramPlane, FaYoutube } from 'react-icons/fa';
-import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
+import { MdOutlineDarkMode } from 'react-icons/md';
 import styles from './Footer.module.scss';
 const Footer = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -54,18 +54,7 @@ const Footer = () => {
         <p>Learning Platform</p>
         <p>Dev.Learn © 2024 All rights reserved.</p>
         <div className={styles.lightModeToggle}>
-          <button
-            className={isDarkMode ? styles.selected : ''}
-            onClick={() => setIsDarkMode(true)}
-          >
-            <MdOutlineDarkMode />
-          </button>
-          <button
-            className={!isDarkMode ? styles.selected : ''}
-            onClick={() => setIsDarkMode(false)}
-          >
-            <MdOutlineLightMode />
-          </button>
+          <MdOutlineDarkMode />
         </div>
       </div>
     </footer>

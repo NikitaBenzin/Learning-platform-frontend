@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #000201;
+  --primary: #000000;
   --text: #ffffff;
   --btn: #bebee6;
   --border: #50506e;
@@ -55,19 +55,19 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-semibold;
+  @apply font-bold;
 }
 
 h1 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 h3 {
-  @apply text-lg;
+  @apply text-xl;
 }
 
 header {
@@ -133,15 +133,15 @@ a {
 
 @media (max-width: 768px) {
   h1 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h2 {
-    @apply text-base;
+    @apply text-xl;
   }
   h3 {
-    @apply text-sm;
+    @apply text-lg;
   }
   p {
-    @apply text-xs;
+    @apply text-sm;
   }
 }
