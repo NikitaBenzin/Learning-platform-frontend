@@ -13,7 +13,7 @@ export function AuthToggle({ isLogin }: { isLogin: boolean }) {
           Don't have an account?{' '}
           <button
             type='button'
-            className={styles.switchAuth}
+            className='underline'
             onClick={() => router.push(PUBLIC_PAGES.REGISTER)}
           >
             Signup
@@ -24,7 +24,7 @@ export function AuthToggle({ isLogin }: { isLogin: boolean }) {
           Already have an account?{' '}
           <button
             type='button'
-            className={styles.switchAuth}
+            className='underline'
             onClick={() => router.push(PUBLIC_PAGES.LOGIN)}
           >
             Login

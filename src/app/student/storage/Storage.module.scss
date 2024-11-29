@@ -1,43 +1,43 @@
 @import '@/assets/styles/mixins.scss';
-
-.intensivesGallery {
+.filesGallery {
   @apply grid justify-items-center gap-8 justify-center w-full;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
 
-  .intensive {
+  .file {
     @apply w-full rounded-md justify-start cursor-pointer bg-[#000000] bg-no-repeat bg-contain relative;
-    scroll-snap-align: center;
     background-image: url('../../assets/images/main_background1.png');
     background-position: top right;
-    @include btn-hover-animation;
+
+    .fileNumber {
+      @apply text-xl;
+    }
+
+    .fileInfo {
+      @apply flex p-6 h-full flex-col items-center align-baseline justify-end max-w-[295px] relative z-10;
+      h3 {
+        @apply uppercase my-4 max-w-[90%] text-center;
+      }
+      .fileDetails {
+        @apply flex flex-col w-fit gap-2 text-nowrap;
+        span {
+          @apply border border-white border-opacity-20 rounded-full px-2  text-[0.75rem];
+        }
+      }
+    }
     a {
+      @apply w-fit text-[#000000] font-semibold rounded-md px-4 py-1  bg-[#4ba47f];
       &:hover {
         &::after {
           width: 0;
         }
       }
-      .intensiveInfo {
-        @apply flex p-6 h-full flex-col-reverse align-baseline justify-end max-w-[295px] relative z-10;
-        h3 {
-          @apply uppercase mt-2 max-w-[90%];
-        }
-        .intensiveDetails {
-          @apply flex flex-col w-fit gap-2 text-nowrap;
-          span {
-            @apply border border-white border-opacity-20 rounded-full px-2  text-[0.75rem];
-          }
-        }
-      }
-      img {
-        @apply flex size-32 justify-self-end absolute top-0 right-0;
-        object-fit: contain;
-      }
+      @include btn-hover-animation;
     }
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .intensivesGallery {
+  .filesGallery {
     row-gap: 1rem;
   }
 }
@@ -50,14 +50,14 @@
       @apply mr-0;
     }
   }
-  .intensives {
-    .intensivesGallery {
-      .intensive {
-        .intensiveInfo {
+  .files {
+    .filesGallery {
+      .file {
+        .fileInfo {
           h3 {
             @apply mb-2;
           }
-          .intensiveDetails {
+          .fileDetails {
             flex-direction: column;
             width: fit-content;
           }
@@ -79,10 +79,10 @@
       }
     }
   }
-  .intensives {
-    .intensivesGallery {
-      .intensive {
-        .intensiveInfo {
+  .files {
+    .filesGallery {
+      .file {
+        .fileInfo {
           h3 {
             @apply max-w-[90%];
           }

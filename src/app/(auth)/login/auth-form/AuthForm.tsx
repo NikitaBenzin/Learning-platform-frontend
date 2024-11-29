@@ -55,8 +55,6 @@ export function AuthForm({ isLogin }: AuthFormProps) {
         </Button>
       </div>
 
-      {/* <SocialMediaButtons /> */}
-
       <AuthToggle isLogin={isLogin} />
     </form>
   );

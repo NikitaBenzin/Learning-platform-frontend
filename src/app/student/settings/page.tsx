@@ -9,39 +9,42 @@ const Settings: FC = () => {
   const [isShown, setIsShown] = useState(false);
 
   return (
-    <form
-      className={styles.form}
-      autoComplete='off'
-      encType='multipart/form-data'
-    >
-      <div className={styles.fieldsLayout}>
-        <Field
-          label='Email'
-          type='email'
-          placeholder='Email: '
-          value='test@test.com'
-        />
-        <div className={styles.fieldPassword}>
+    <>
+      <h2 className='mb-4'>Settings</h2>
+      <form
+        className={styles.form}
+        autoComplete='off'
+        encType='multipart/form-data'
+      >
+        <div className={styles.fieldsLayout}>
           <Field
-            label='Password'
-            type={isShown ? 'text' : 'password'}
-            value='123456'
-            placeholder='Password: '
+            label='Email'
+            type='email'
+            placeholder='Email: '
+            value='test@test.com'
           />
+          <div className={styles.fieldPassword}>
+            <Field
+              label='Password'
+              type={isShown ? 'text' : 'password'}
+              value='123456'
+              placeholder='Password: '
+            />
 
-          <Button
-            type='button'
-            className={styles.showButton}
-            onClick={() => setIsShown(!isShown)}
-          >
-            {isShown ? <EyeOff /> : <Eye />}
+            <Button
+              type='button'
+              className={styles.showButton}
+              onClick={() => setIsShown(!isShown)}
+            >
+              {isShown ? <EyeOff /> : <Eye />}
+            </Button>
+          </div>
+          <Button type='submit' isFilled={true}>
+            Save
           </Button>
         </div>
-        <Button type='submit' isFilled={true}>
-          Save
-        </Button>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 

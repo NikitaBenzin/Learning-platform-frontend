@@ -3,7 +3,7 @@ import styles from './Field.module.scss';
 
 import clsx from 'clsx';
 import { IField } from './Field.types';
-const Field: FC<{ label: string } & IField> = ({
+const Field: FC<{ label?: string } & IField> = ({
   label = '',
   children,
   className = '',

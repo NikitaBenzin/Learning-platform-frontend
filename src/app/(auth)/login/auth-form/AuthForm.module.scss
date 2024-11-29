@@ -17,10 +17,4 @@
 
 .authToggle {
   @apply text-center text-sm mt-3;
-
-  p {
-    .switchAuth {
-      text-decoration: underline;
-    }
-  }
 }
