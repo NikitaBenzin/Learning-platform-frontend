@@ -1,0 +1,97 @@
+@import '@/assets/styles/mixins.scss';
+.header {
+  @apply flex justify-between items-center px-8 rounded-full relative z-10;
+  vertical-align: baseline;
+  .hamburgerButton {
+    @apply hidden text-[1.45rem];
+  }
+
+  .headerNavigation {
+    @apply flex gap-12 items-center;
+
+    a {
+      &:hover:not(:last-child) {
+        &:after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        @apply block h-[1px] cursor-pointer w-0 bg-white border-opacity-50;
+        transition: width 0.5s;
+      }
+    }
+    .studentPage {
+      @apply px-4 py-1 flex items-center;
+      @include btn-hover-animation;
+      > svg {
+        @apply text-xl;
+      }
+    }
+  }
+}
+.active {
+  &:after {
+    width: 100% !important;
+  }
+}
+.open {
+  display: flex !important;
+  gap: 2rem !important;
+  @apply absolute items-center top-12 left-0 w-full flex-col rounded-lg p-4 bg-[#000000];
+  animation: slideDown 0.5s linear;
+  a {
+    @apply rounded-2xl py-2 px-4;
+    @include btn-hover-animation;
+    opacity: 0;
+    animation: fadeIn 0.5s 0.5s linear forwards;
+    &:hover {
+      &:after {
+        width: 0% !important;
+      }
+    }
+  }
+  .studentPage {
+    @apply flex items-center ml-4;
+    @include btn-hover-animation;
+    > svg {
+      @apply text-xl;
+    }
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    @apply h-0;
+  }
+  100% {
+    @apply h-[215px];
+  }
+}
+@keyframes fadeIn {
+  0% {
+    @apply opacity-0;
+  }
+  100% {
+    @apply opacity-100;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    .headerNavigation {
+      gap: 2rem;
+    }
+  }
+}
+@media (max-width: 494px) {
+  .header {
+    @apply px-0;
+    .headerNavigation {
+      display: none;
+    }
+    .hamburgerButton {
+      display: block;
+    }
+  }
+}

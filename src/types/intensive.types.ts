@@ -1,8 +1,18 @@
 export interface IIntensive {
-  name: string;
-  description: string;
-  video: IVideo[];
+  title: string;
+  slug: string;
+  price: number;
   previewImage: string;
+  videoPresentationUrl: string;
+  lessonsAmount: number;
+  exercisesAmount: number;
+  hoursAmount: number;
+  videos?: IVideo[];
+  additionalInfo: {
+    lessonsAmount: number;
+    hoursAmount: number;
+    exerciseAmount: number;
+  };
 }
 
 export interface IVideo {

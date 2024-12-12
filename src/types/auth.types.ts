@@ -1,7 +1,7 @@
-import { UserRole } from '@/services/auth/auth.types';
-import { IUserSubscription } from './subscriptions.types';
-
-export interface IAuthForm {}
+export enum UserRole {
+  USER,
+  ADMIN,
+}
 
 export interface IUser {
   id: number;
@@ -10,7 +10,6 @@ export interface IUser {
   avatarPath?: string;
   verificationToken?: string;
   rights: UserRole[];
-  subscription: IUserSubscription;
 }
 
 export interface IFormData extends Pick<IUser, 'email'> {

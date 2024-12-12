@@ -1,0 +1,12 @@
+@import '@/assets/styles/mixins.scss';
+.button {
+  @apply border border-white font-semibold border-opacity-10 px-8 py-2 flex items-center rounded-md;
+  @include btn-hover-animation;
+  > svg {
+    @apply text-xl;
+  }
+}
+
+.filled {
+  @apply text-[#000000] border-none bg-[#4ba47f];
+}

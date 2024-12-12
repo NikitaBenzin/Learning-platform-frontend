@@ -1,0 +1,6 @@
+.layout {
+  @apply mb-4;
+  .inputField {
+    @apply w-full p-2 bg-transparent focus:outline-none placeholder:text-white border-b-2 border-b-white rounded-none;
+  }
+}

@@ -1,0 +1,29 @@
+.layout {
+  @apply grid gap-4 p-8 pl-0;
+  height: calc(100vh - 1rem - 30px);
+  grid-template-columns: 72px auto;
+  align-items: center;
+
+  .main {
+    @apply w-full h-full rounded-lg p-8 flex flex-col justify-start items-center;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.profileInfo {
+  @apply flex flex-col justify-start items-center gap-4;
+  .profileImage {
+    @apply size-32 rounded-full;
+  }
+  .studentStatistics {
+    @apply flex gap-4 opacity-80 border px-4 py-2;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    @apply p-0 pt-4;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 72px;
+  }
+}
